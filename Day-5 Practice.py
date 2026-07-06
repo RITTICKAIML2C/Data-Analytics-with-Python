@@ -1,6 +1,6 @@
 # # 1. Create a list of squares from 1 to 10 using list comprehension.
 squares = [i ** 2 for i in range(1, 11)]
-print(squares)
+print("Squares:", squares)
 
 # # 2. From: numbers = [12, 25, 18, 41, 50, 63]. Create a list containing only even numbers
 numbers = [12, 25, 18, 41, 50, 63]
