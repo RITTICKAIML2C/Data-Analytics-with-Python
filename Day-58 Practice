@@ -1,0 +1,65 @@
+import numpy as np
+import pandas as pd 
+# # 1. Basic Query() 
+# # Tasks : A. Find employees with salary greater than ₹80,000 B. Find employees with performance ≥ 90, C. Find employees with experience ≥ 5, D. Find employees who have, Salary > 80,000 AND Performance >= 90, E. Find employees from the IT department with salary > ₹70,000.
+df = pd.DataFrame({
+    "Employee": [
+        "Aman", "Riya", "Rahul",
+        "Priya", "Karan", "Neha"
+    ],
+    "Department": [
+        "IT", "HR", "IT",
+        "Finance", "HR", "Finance"
+    ],
+    "Salary": [
+        85000, 60000, 75000,
+        95000, 55000, 90000
+    ],
+    "Performance": [
+        95, 82, 88,
+        92, 65, 94
+    ],
+    "Experience": [
+        8, 4, 6,
+        10, 2, 7
+    ]
+})
+print(df.query("Salary > 80000"))
+print(df.query("Performance >= 90"))
+print(df.query("Experience >= 5"))
+print(df.query("Salary > 50000 and Performance >= 90"))
+print(df.query('Department == "IT" and Salary > 70000'))
+
+# # 2. Multiple Business conditions 
+# # A. Find employees who are: Performance >= 90 AND Experience >= 5
+# # B. Find employees who are: Salary >= 80,000 AND Experience >= 5
+# # C. Find employees who satisfy: Performance >= 90 OR Salary >= 90,000
+# # D. Find employees who are not from IT.
+# # Try doing these using .query().
+df = pd.DataFrame({
+    "Employee": [
+        "Aman", "Riya", "Rahul",
+        "Priya", "Karan", "Neha"
+    ],
+    "Department": [
+        "IT", "HR", "IT",
+        "Finance", "HR", "Finance"
+    ],
+    "Salary": [
+        85000, 60000, 75000,
+        95000, 55000, 90000
+    ],
+    "Performance": [
+        95, 82, 88,
+        92, 65, 94
+    ],
+    "Experience": [
+        8, 4, 6,
+        10, 2, 7
+    ]
+})
+print(df.query("Performance >= 90 and Experience >= 5"))
+print(df.query("Salary >= 80000 and Experience >= 5"))
+print(df.query("Performance >= 90 or Salary >= 90000"))
+print(df.query('Department != "IT"'))
+
